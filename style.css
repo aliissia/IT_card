@@ -1,0 +1,436 @@
+/* 1. Сброс базовых отступов и общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #071126; /* Твой цвет фона */
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Ограничитель ширины контента */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. Стили для Шапки */
+.main-header {
+    background-color: rgba(7, 17, 38, 0.5); /* Полупрозрачный фон в цвет сайта */
+    border-bottom: 1px solid #112240;
+    padding: 20px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-menu .nav-link {
+    margin: 0 15px;
+    font-size: 0.95rem;
+    color: #a0aec0; /* Приглушенный цвет для ссылок меню */
+    transition: color 0.3s ease;
+}
+
+.nav-menu .nav-link:hover {
+    color: #2605E2; /* Подсветка меню при наведении твоим цветом */
+}
+
+.header-phone a {
+    font-weight: 600;
+    color: #2605E2; /* Твой цвет для телефона */
+}
+
+/* ==========================================================================
+   3. ГЛАВНЫЙ БЛОК (HERO SECTION)
+   ========================================================================== */
+.hero-section {
+    padding: 60px 0; /* Одинаковый отступ для всех секций */
+}
+
+.hero-top-image {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 50px; /* Отступ от картинки до контента */
+}
+
+.hero-top-image img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    max-height: 450px;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    /* Убрали margin-bottom, чтобы не ломать симметрию */
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-subtitle {
+    display: inline-block;
+    color: #2605E2;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.hero-description {
+    color: #a0aec0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.hero-graphic {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-graphic img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================================================
+   ОБЩИЕ СТИЛИ ДЛЯ ПОСЛЕДУЮЩИХ СЕКЦИЙ И ЗАГОЛОВКОВ
+   ========================================================================== */
+.services-section, 
+.tech-section {
+    padding: 60px 0; /* Строгая симметрия отступов сверху и снизу */
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 0;       /* Браузер больше не добавляет от себя лишнего */
+    margin-bottom: 40px; /* Фиксированный зазор от заголовка до элементов внутри блока */
+    letter-spacing: -0.5px;
+}
+
+/* ==========================================================================
+   4. БЛОК УСЛУГИ (SERVICES GRID)
+   ========================================================================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background-color: #051955; /* Глубокий синий из макета */
+    border: 1px solid #112240;
+    border-radius: 6px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column; 
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    min-height: 3.5rem; /* Выравнивание мелкого текста на одну линию */
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.service-text {
+    color: #a0aec0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: #2605E2;
+    box-shadow: 0 10px 20px rgba(38, 5, 226, 0.15);
+}
+
+/* ==========================================================================
+   5. БЛОК СТЕК ТЕХНОЛОГИЙ & КНОПКА
+   ========================================================================== */
+.tech-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.tech-item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tech-item img {
+    max-width: 100%;
+    height: auto;
+    max-height: 90px;
+    object-fit: contain;
+}
+
+.tech-action {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #051955;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 14px 35px;
+    border-radius: 4px;
+    border: 1px solid #112240;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2605E2;
+    border-color: #2605E2;
+    transform: scale(1.02);
+}
+
+/* ==========================================================================
+   6. БЛОК НАДЕЖНОСТЬ (METRICS SECTION)
+   ========================================================================== */
+.metrics-section {
+    padding: 60px 0; /* Строгий симметричный отступ, как у предыдущих блоков */
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки одинаковой ширины */
+    gap: 25px;
+}
+
+.metric-card {
+    background-color: #051955; /* Твой глубокий синий цвет */
+    border: 1px solid #112240;
+    border-radius: 6px;
+    padding: 35px 30px;
+    text-align: center; /* Центрируем цифры и текст внутри карточки */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    border-color: #2605E2; /* Подсветка ультрамарином при наведении */
+}
+
+.metric-number {
+    font-size: 3rem;
+    font-weight: 850;
+    color: #2605E2; /* Твой яркий акцентный цвет для цифр */
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.metric-text {
+    color: #a0aec0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   6. БЛОК ЭТАПЫ РАБОТЫ (ЧИСТАЯ ГОРИЗОНТАЛЬНАЯ ЛИНИЯ)
+   ========================================================================== */
+.steps-section {
+    padding: 60px 0;
+}
+
+.steps-container {
+    position: relative;
+    padding: 20px 0;
+}
+
+
+/* Сетка на 4 колонки */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.step-column {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Шахматное смещение относительно центральной линии */
+.step-top {
+    margin-bottom: 90px;
+}
+
+.step-bottom {
+    margin-top: 90px;
+}
+
+/* Заголовки этапов */
+.step-meta {
+    color: #2605E2;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 18px;
+}
+
+
+/* Серый текст описания */
+.step-desc {
+    color: #a0aec0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    padding-left: 18px;
+}
+
+/* ==========================================================================
+   7. БЛОК УСЛОВИЯ И ОПЛАТА
+   ========================================================================== */
+.pricing-section {
+    padding: 60px 0;
+}
+
+.pricing-content {
+    max-width: 800px; /* Чтобы текст не растягивался на весь экран и легко читался */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.pricing-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pricing-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase; /* Делаем капсом, как в макете */
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Синяя плашка тарифа */
+.pricing-badge {
+    color: #2605E2;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+}
+
+.pricing-desc {
+    color: #a0aec0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ==========================================================================
+   8. ПОДВАЛ САЙТА (FOOTER)
+   ========================================================================== */
+.main-footer {
+    padding: 40px 0;
+    border-top: 1px solid #112240; /* Тонкая стильная линия отделения от сайта */
+    margin-top: 40px;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Стиль копирайта */
+.footer-copyright {
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+
+/* Блок ссылок */
+.footer-contacts {
+    display: flex;
+    gap: 35px; /* Расстояние между телефоном и почтой */
+}
+
+/* Общие стили для контактов в подвале */
+.footer-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Выделяем подписи "Тел:" и "Email:" твоим фирменным синим */
+.footer-link span {
+    color: #2605E2;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+/* Эффект при наведении */
+.footer-link:hover {
+    color: #2605E2;
+}
+
+/* Небольшая адаптивность: если экран совсем маленький, перестроим в столбик */
+@media (max-width: 600px) {
+    .footer-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .footer-contacts {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
